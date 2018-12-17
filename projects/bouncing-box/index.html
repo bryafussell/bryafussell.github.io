@@ -63,11 +63,11 @@
 			
 			box.css('left', position); // update box's CSS with the new position
 			
-			if(position > boardWidth){
+			if(position > boardWidth) {
 			     direction = -1;
 			}
 			 
-			if(position < 0){
+			if(position < 0) {
 			    direction = 1;
 			}
 			
@@ -82,7 +82,7 @@
 				
 			       position = 0; // reset the position of the box to 0
 			       speed = speed + 3; // increase the speed of the box on every click
-			  
+			}
 			  
 			//this executes the update function code every 50 milliseconds
 			setInterval(update, 50);

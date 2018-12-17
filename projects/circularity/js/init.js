@@ -36,10 +36,10 @@ var init = function (window) {
     
  
         // TODO 7 : Create a Loop to call drawCircle 100 times
-        var counter = 0;
-        while ( counter < 100) {
-             drawCircle();
-             counter++;
+        drawCircle()
+        var counter = 100;
+        for (var counter = 0; counter < 100; counter++) {
+            drawCircle()
         }
     
         view.addChild(fps);
@@ -47,7 +47,7 @@ var init = function (window) {
         
         
     
-          game.checkCircleBounds = function(circle) {
+          runner.checkCircleBounds = function(circle) {
             // TODO 5 : YOUR CODE STARTS HERE //////////////////////
            
      
@@ -75,27 +75,25 @@ var init = function (window) {
         var update = function() {
             // TODO 4 : Update the circle's position //
             physikz.updatePosition(circles[0]);
-            // TODO 6 : Call checkCircleBounds on your circles.
-    
-              game.checkCircleBounds(circles[0]);
-            // TODO 8 : Iterate over the array
-            var circles = [];
-            var circle;
-         
-             circle = 0;
-            while (circle < circles.length) {
-            circles = circles[circle];
-            console.log(circle);
-            circle++;
+            physikz.updatePosition(circles[1]);
+            physikz.updatePosition(circles[2]);
+            physikz.updatePosition(circles[3]);
+            physikz.updatePosition(circles[4]);
             
-            physikz.updatePosition(circle);
-            game.checkCirclePosition(circle);
-            }
-         
-         
-         
-         
-          }
+            // TODO 6 : Call checkCircleBounds on your circles.
+            runner.checkCircleBounds(circles[0]);
+            runner.checkCircleBounds(circles[1]);
+            runner.checkCircleBounds(circles[2]);
+            runner.checkCircleBounds(circles[3]);
+            runner.checkCircleBounds(circles[4]);
+               
+            // TODO 8 : Iterate over the array
+           for (var i = 0; i < circles.length; i++) {
+           physikz.updatePosition(circles[i]);
+           console.log(circles[i]);
+           runner.checkCircleBounds(circles[2]);
+           }
+           };
         
         ////////////////////////////////////////////////////////////////////
         // NO CODE BELOW HERE                                             //
